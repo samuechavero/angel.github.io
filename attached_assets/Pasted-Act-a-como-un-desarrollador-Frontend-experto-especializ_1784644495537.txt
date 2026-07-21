@@ -1,0 +1,45 @@
+Actúa como un desarrollador Frontend experto especializado en React, Vite y Tailwind CSS, enfocado en embudos de marketing de respuesta directa (Direct Response). Necesito desarrollar una Landing Page tipo VSL (Video Sales Letter) para un experto en finanzas de "Caridad Agency" (referencia de marca y estilo: caridadagency.com). El color principal de acento debe ser el rojo corporativo de la marca.
+
+La estructura de la aplicación debe cumplir estrictamente con los siguientes requisitos funcionales y de UX:
+
+1. Lead Gate (Compuerta de Captura Obligatoria):
+
+Al cargar la página, el contenido principal debe estar oculto o desenfocado.
+
+Debe aparecer un Modal/Pop-up central e inamovible (Gate) que exija al usuario ingresar su "Nombre Completo" y "Número de Teléfono".
+
+Diseña el formulario preparándolo para una futura integración con una base de datos (ej. Supabase).
+
+Solo tras enviar el formulario correctamente (submit), el Modal desaparece y se revela el contenido de la VSL.
+
+2. Estructura de la VSL (Contenido Principal):
+
+Header: Un titular grande, persuasivo y centrado (La Promesa Principal), optimizado para conversión.
+
+Contenedor de Video: Debajo del titular, un "box" o contenedor responsivo para un video en formato horizontal (16:9).
+
+Transición al Lead Magnet: Debajo del video, un texto destacado que diga "Descarga el eBook abajo".
+
+3. Sección del eBook:
+
+Un layout de dos columnas (que colapse a una columna en móviles).
+
+Columna 1: Un placeholder para la imagen de portada del eBook.
+
+Columna 2: Un texto persuasivo diseñado para generar intriga y deseo (curiosity copy).
+
+Botón de Descarga: Un botón destacado que diga "Descargar eBook". Debe estar configurado con la etiqueta <a> y el atributo download para forzar la descarga automática de un archivo local llamado "El_Codigo_de_la_Tranquilidad.pdf".
+
+4. UX Avanzada: Botón Flotante Dinámico:
+
+Implementa un botón de acción flotante (Floating Action Button) en la esquina inferior derecha o fijado en la parte inferior de la pantalla que diga "eBook Gratuito".
+
+Lógica de Intersección: Usa IntersectionObserver (o un hook de scroll en React) para que este botón flotante desaparezca automáticamente en el momento en que el usuario haga scroll y la "Sección del eBook" (punto 3) entre en el viewport.
+
+5. Sección de Autoridad (Biografía):
+
+Más abajo, un contenedor (Box) elegante para presentar al autor: Ángel Caridad.
+
+Debe incluir un placeholder para su fotografía a un lado, y al otro lado, un espacio de texto para una breve biografía que refuerce sus 24 años de trayectoria y autoridad financiera.
+
+Por favor, genera la estructura completa, los componentes funcionales de React y aplica clases de Tailwind CSS limpias, estéticas y orientadas a la conversión.
