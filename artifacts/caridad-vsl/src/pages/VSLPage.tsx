@@ -48,15 +48,14 @@ export default function VSLPage() {
               <div className="w-32 h-1.5 bg-brand-red mx-auto mb-12 shadow-[0_0_15px_rgba(255,0,34,0.5)]"></div>
 
               {/* Video Container */}
-              <div className="max-w-4xl mx-auto w-full aspect-video bg-[#111] border-2 border-brand-red rounded-xl shadow-[0_0_30px_rgba(255,0,34,0.15)] relative flex items-center justify-center group cursor-pointer overflow-hidden">
-                {/* TODO: Replace with actual video embed (YouTube/Vimeo iframe) */}
-                <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80')] bg-cover bg-center opacity-30 group-hover:opacity-40 transition-opacity mix-blend-luminosity"></div>
-                
-                <div className="relative z-10 w-20 h-20 sm:w-24 sm:h-24 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300 border border-white/20">
-                  <div className="w-16 h-16 sm:w-20 sm:h-20 bg-white rounded-full flex items-center justify-center shadow-2xl">
-                    <Play className="w-8 h-8 sm:w-10 sm:h-10 text-brand-red ml-1.5 fill-brand-red" />
-                  </div>
-                </div>
+              <div className="max-w-4xl mx-auto w-full aspect-video bg-[#111] border-2 border-brand-red rounded-xl shadow-[0_0_30px_rgba(255,0,34,0.15)] relative overflow-hidden">
+                <video 
+                  src="./videovsl.mp4" 
+                  controls 
+                  className="w-full h-full object-contain"
+                >
+                  Tu navegador no soporta el elemento de video.
+                </video>
               </div>
               
               <p className="text-gray-400 text-sm sm:text-base mt-4 flex items-center justify-center gap-2 font-medium">
@@ -89,10 +88,6 @@ export default function VSLPage() {
             <img src={logo} alt="Caridad Agency LLC" className="h-8 mb-6 brightness-0 invert" />
             <p className="text-gray-500 text-sm">
               &copy; {new Date().getFullYear()} Caridad Agency LLC. Todos los derechos reservados.
-            </p>
-            <p className="text-gray-600 text-xs mt-2 max-w-xl mx-auto">
-              Este sitio no es parte del sitio web de Facebook o Facebook Inc. 
-              Además, este sitio no está respaldado por Facebook de ninguna manera. FACEBOOK es una marca comercial de FACEBOOK, Inc.
             </p>
           </div>
         </footer>

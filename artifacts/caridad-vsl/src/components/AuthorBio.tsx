@@ -15,10 +15,12 @@ export function AuthorBio() {
             <div className="relative mb-6 group">
               <div className="absolute -inset-1 bg-gradient-to-tr from-gray-900 to-brand-red rounded-full opacity-70 group-hover:opacity-100 blur transition-opacity duration-500"></div>
               
-              <div className="relative w-64 h-64 rounded-full bg-gradient-to-b from-gray-800 to-brand-red flex items-center justify-center border-4 border-white shadow-2xl">
-                <span className="text-7xl font-black text-white tracking-tighter shadow-sm">
-                  ÁC
-                </span>
+              <div className="relative w-64 h-64 rounded-full border-4 border-white shadow-2xl overflow-hidden bg-gray-200">
+                <img 
+                  src="./angel.jpg" 
+                  alt="Ángel Caridad" 
+                  className="w-full h-full object-cover"
+                />
               </div>
             </div>
             

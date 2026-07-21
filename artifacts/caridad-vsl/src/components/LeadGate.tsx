@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { supabase } from '../lib/supabaseClient';
 import { motion, AnimatePresence } from 'framer-motion';
 import logo from '@assets/caridad-logo.png';
 import { Input } from './ui/input';
@@ -11,15 +12,30 @@ interface LeadGateProps {
 export function LeadGate({ onUnlock }: LeadGateProps) {
   const [name, setName] = useState('');
   const [phone, setPhone] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!name.trim() || !phone.trim()) return;
     
-    // TODO: Replace form submission handler with Supabase insert call
-    // e.g. await supabase.from('leads').insert({ name, phone })
-    
-    onUnlock();
+    setIsLoading(true);
+    try {
+      const { error } = await supabase
+        .from('prospectos_vsl')
+        .insert([{ nombre_completo: name, numero_telefono: phone }]);
+        
+      if (error) {
+        console.error('Error insertando a supabase:', error);
+        alert('Hubo un error al enviar tus datos. Por favor, intenta nuevamente.');
+      } else {
+        onUnlock();
+      }
+    } catch (err) {
+      console.error('Excepción durante el envío:', err);
+      alert('Ocurrió un error inesperado. Por favor, intenta nuevamente.');
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   return (
@@ -74,9 +90,10 @@ export function LeadGate({ onUnlock }: LeadGateProps) {
           
           <Button 
             type="submit" 
-            className="w-full h-14 text-base font-bold bg-brand-red hover:bg-brand-red/90 text-white rounded-full mt-2 shadow-lg shadow-brand-red/20 transition-all hover:shadow-brand-red/40 hover:-translate-y-0.5"
+            disabled={isLoading}
+            className="w-full h-14 text-base font-bold bg-brand-red hover:bg-brand-red/90 text-white rounded-full mt-2 shadow-lg shadow-brand-red/20 transition-all hover:shadow-brand-red/40 hover:-translate-y-0.5 disabled:opacity-70 disabled:hover:translate-y-0"
           >
-            VER EL VIDEO AHORA &rarr;
+            {isLoading ? 'ENVIANDO...' : <>VER EL VIDEO AHORA &rarr;</>}
           </Button>
           
           <p className="text-xs text-center text-gray-400 mt-4 flex items-center justify-center gap-1">

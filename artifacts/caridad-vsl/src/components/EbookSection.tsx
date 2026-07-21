@@ -24,7 +24,7 @@ export function EbookSection() {
                     Método Exclusivo
                   </p>
                   <h3 className="text-3xl sm:text-4xl font-black text-white leading-tight uppercase mb-4" style={{ textShadow: '0 2px 10px rgba(0,0,0,0.3)' }}>
-                    El Código de la Tranquilidad
+                    El Código de la Tranquilidad Financiera
                   </h3>
                 </div>
                 
@@ -75,8 +75,8 @@ export function EbookSection() {
             
             <div className="space-y-4">
               <a 
-                href="/El_Codigo_de_la_Tranquilidad.pdf" 
-                download="El_Codigo_de_la_Tranquilidad.pdf"
+                href="./Tranquilidadfinanciera.pdf" 
+                download="Tranquilidad_Financiera.pdf"
                 className="block w-full sm:w-auto text-center bg-brand-red hover:bg-brand-red/90 text-white font-bold text-lg py-4 sm:px-10 rounded-full shadow-lg shadow-brand-red/25 transition-all hover:-translate-y-1 hover:shadow-brand-red/40"
               >
                 📥 Descargar eBook GRATIS
