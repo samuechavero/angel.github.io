@@ -59,7 +59,7 @@ export default function VSLPage() {
               </div>
               
               <p className="text-gray-400 text-sm sm:text-base mt-4 flex items-center justify-center gap-2 font-medium">
-                <span className="text-brand-red animate-pulse">▶</span> Presiona play y descubre el método en menos de 20 minutos
+                <span className="text-brand-red animate-pulse">▶</span> Es para mi un placer conocerte y poder ayudarte en esta etapa de crecimiento
               </p>
             </div>
           </section>
