@@ -8,7 +8,7 @@ import runtimeErrorOverlay from '@replit/vite-plugin-runtime-error-modal';
 const port = Number(process.env.PORT || 5173);
 
 export default defineConfig({
-  base: '/angel.github.io/',
+  base: '/',
   plugins: [
     react(),
     tailwindcss(),
