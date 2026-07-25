@@ -28,6 +28,9 @@ export function LeadGate({ onUnlock }: LeadGateProps) {
         console.error('Error insertando a supabase:', error);
         alert('Hubo un error al enviar tus datos. Por favor, intenta nuevamente.');
       } else {
+        if (typeof window !== 'undefined' && window.fbq) {
+          window.fbq('track', 'Lead');
+        }
         onUnlock();
       }
     } catch (err) {
